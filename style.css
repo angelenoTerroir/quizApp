@@ -1,0 +1,26 @@
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #000;
+    padding: 60px;
+}
+.question{
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.answers {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+.button{
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    margin-bottom: 20px;
+}
+.button:hover{
+    background-color: #a6a6a6;
+}
