@@ -7,16 +7,17 @@
 </head>
 <body>
 
-	<div class="landing-page">
+	<div class="landing-page hide">
 		<h1>Rubik's Quiz</h1>
 		<p>How much do you know about Rubik's Cubes?</p>
-		<button class="start button">Nothing, but I'll try anyway.</button>
-		<button class="start button">Everything. Do your worst.</button>
-		<button class="start button">Somewhere in the middle.</button>
+		<form name="begin">
+			<button type="submit" class="button">Nothing, but I'll try anyway.</button>
+			<button type="submit" class="button">Everything. Do your worst.</button>
+			<button type="submit" class="button">Somewhere in the middle.</button>
+		</form>
 	</div>
 
-
-	<div class="quiz-page">
+	<div class="quiz-page hide">
 		<h2 class="question"></h2>
 		<div class="question-number"><div>
 		<form name="question-text">
@@ -26,24 +27,18 @@
 		</form>
 	</div>
 
-	<div class="answer-page">
-		<h2 class="question"></h2>
-		<div class="question-number"><div>
-		<form name="question-text">
-			<ul class="answers"></ul>
-			<button type="submit" class="button">Submit</button>
-          	<button class="button restart">Start over</button>
-		</form>
+	<div class="answer-page hide">
+		<div class="feedback">
+          <div class="feedback-title"></div>
+          <p class="feedback-text"></p>
+          <button class="next"></button>
+        </div>
 	</div>
 
-	<div class="results-page">
-		<h2 class="question"></h2>
-		<div class="question-number"><div>
-		<form name="question-text">
-			<ul class="answers"></ul>
-			<button type="submit" class="button">Submit</button>
-          	<button class="button restart">Start over</button>
-		</form>
+	<div class="results-page hide">
+		<h2>Final Score</h2>
+		<p class="final-score"><p>
+		<button class="button restart">Start over</button>
 	</div>
 
 <script type="text/javascript" src="app.js"></script>
