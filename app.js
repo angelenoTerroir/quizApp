@@ -1,4 +1,8 @@
- var myQuestions = [
+  
+// STATE
+
+var state = {
+  var myQuestions = [
     {
         question: "What year was the Rubik\'s Cube invented?",
         answers: {
@@ -40,7 +44,7 @@
         correctAnswer: 'd'
     },
     {
-        question: "How many Rubik\'s Cubes have been sold Worldwide?",
+        question: "How many Rubik\'s Cubes have been sold worldwide?",
         answers: {
             a: '350 million',
             b: 'over 1 billion',
@@ -99,12 +103,30 @@
         },
         correctAnswer: 'c'
     },
-
-
-
-
-
 ];
+}
+
+
+// STATE MODIFICATION
+
+
+
+
+
+
+// RENDERING
+
+
+
+
+
+
+// EVENT LISTENERS
+
+
+
+
+/*
 
 var startButton = document.getElementById('start-message')
 var quizContainer = document.getElementById('quiz');
@@ -112,7 +134,10 @@ var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+startButton.onclick = function(){
+        generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+        showQuiz(showQuestions);
+    }
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 

@@ -3,7 +3,22 @@ body{
     font-family: sans-serif;
     color: #000;
     padding: 60px;
+    margin: auto;
 }
+
+h1{
+    font-size: 72px;
+    padding-bottom:;
+}
+
+h2{
+    font-size: 36px
+}
+
+p{
+    font-size: 18px;
+}
+
 .question{
     font-weight: 600;
     font-size: 24px;
@@ -18,9 +33,15 @@ body{
     font-size: 16px;
     background-color: #000;
     color: #fff;
+    border-radius: 4px;
+    border: 0px;
     padding: 12px 24px;
     margin-bottom: 20px;
 }
 .button:hover{
-    background-color: #a6a6a6;
+    background-color: #636363;
+}
+
+.hide{
+    display:none;
 }
