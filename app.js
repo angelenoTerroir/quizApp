@@ -1,5 +1,4 @@
 // STATE
-
 var state = {
   quiz = [
 	    {
@@ -112,7 +111,7 @@ var state = {
 	    "Solid answer. You should do this professionally.",
 	    "Is it smokey in here? Because you're on fire!",
 	    "Seriously. Great job.",
-	    "You didn't cheat on that question did you?",
+	    "You didn't cheat on that question did you?  Becaues oyu got it right!",
 	    "That's right. Nice job."
 	    "Congratulations, you know a useless fact."
 	    "I'm pretty sure you guessed on that one, but you got it correct, so..."
@@ -137,12 +136,13 @@ var state = {
 	    "Better luck next time.",
 	    "Not a great choice.",
 	    "Try harder next time.",
-	    "False."
+	    'In the words of Dwight Schrute... "False."',
+	    "That's not right."
 	],
 
 	score: 0,
 	currentQuestionIndex: 0,
-	route: 'start',
+	//route: 'start',
 	lastAnswerCorrect: false,
 	feedbackRandom: 0
 }
@@ -150,6 +150,21 @@ var state = {
 
 // STATE MODIFICATION
 
+function nextScreen(){
+	var removeCurrent = document.getElementsByClass('start-game');
+	var containerCurrent = removeCurrent.parentnode;
+	containerCurrent.removeParent(removeCurrent);
+}
+/*
+
+$('.start-game').click(startGame(start));
+
+
+
+
+
+
+/*
 function setRoute(state, route) {
   state.route = route;
 };
@@ -284,10 +299,10 @@ function renderFinalFeedbackText(state, element) {
 // EVENT LISTENERS
 
 var PAGE_ELEMENTS = {
-  'start': $('.landing-page'),
-  'question': $('.quiz-page'),
-  'answer-feedback': $('.answer-page'),
-  'feedback': $('.results-page')
+  'start': $('landing-page'),
+  'question': $('quiz-page'),
+  'answer-feedback': $('answer-page'),
+  'feedback': $('results-page')
 };
 
 $("form[name='begin']").submit(function(event) {
