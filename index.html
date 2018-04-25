@@ -9,7 +9,7 @@
 
   <main>
 
-  	<div class="start-page" >
+  	<div class="start-page" style="display: none;">
   		<h1>Rubik's Quiz</h1>
   		<p class="about">How much do you know about Rubik's Cubes?</p>
   		<form name="start-game"> 
@@ -19,7 +19,7 @@
   		</form>
   	</div>
 
-  	<div class="question-page" >
+  	<div class="question-page" style="display: none;">
       <div class="question-number"></div>
       <h2 class="question-title"></h2>
   		<form name="answers">
@@ -29,7 +29,7 @@
   		</form>
   	</div>
 
-  	<div class="answer-page" >
+  	<div class="answer-page" style="display: none;">
   		<div class="answer-result">
         <div class="answer-title"></div>
         <p class="answer-text"></p>
@@ -37,19 +37,15 @@
       </div>
   	</div>
 
-  	<div class="score-page">
+  	<div class="score-page" style="display: none;">
   		<h2>Final Score</h2>
   		<p class="final-score"></p>
   		<button class="button restart">Start over</button>
   	</div>
 
   </main>
-<!--
+
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
-
-style="display: none;"
--->
-
 </body>
 </html>
