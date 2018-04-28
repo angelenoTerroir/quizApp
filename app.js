@@ -97,7 +97,7 @@ var state = {
 	            'How to Solve a Rubik\'s Cube',
 	            'Rubik\'s Cube Revealed',
 	            'You Can Do the Cube', 
-	            'The Magic Cube: Algorithms and the White Cross Method'
+	            'The White Cross Method'
 	        ],
 	        correctAnswer: '2'
 	    },
@@ -139,11 +139,10 @@ var state = {
 	    'In the words of Dwight Schrute... "False."',
 	    "That's not right."
 	],
-
 	score: 0,
 	currentQuestionIndex: 0,
+	page: 'start',
 	lastAnswerCorrect: false,
-  page: 'start',
 	feedbackRandom: 0
 }
 
@@ -217,9 +216,9 @@ function renderQuestionPage(state, element) {
 };
 
 function renderAnswerPage(state, element) {
-  renderAnswerPageHeader(state, element.find(".answer-title"));
-  renderAnswerPageText(state, element.find(".answer-text"));
-  renderNextButtonText(state, element.find(".next"));
+  renderAnswerPageHeader(state, element.find('.answer-title'));
+  renderAnswerPageText(state, element.find('.answer-text'));
+  renderNextButtonText(state, element.find('.next'));
 };
 
 function renderResultsPage(state, element) {
@@ -249,14 +248,14 @@ function renderAnswers(state, element) {
   element.html(answers);
 };
 
-function renderResultsHeader(state, element) {
+function renderAnswerPageHeader(state, element) {
   var html = state.lastAnswerCorrect ?
-      "<h1 class='correct-answer'>Correct</h1>" :
+      "<h1 class='correct-answer'>Correct!</h1>" :
       "<h1 class='incorrect-answer'>WRONG!</>";
   element.html(html);
 };
 
-function renderResultsText(state, element) {
+function renderAnswerPageText(state, element) {
   var answers = state.lastAnswerCorrect ? state.winner : state.loser;
   var text = answers[Math.floor(state.feedbackRandom * answers.length)];
   element.text(text);
