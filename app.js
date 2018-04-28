@@ -109,7 +109,7 @@ var state = {
 	    "That was a lucky guess!",
 	    "Don't toot your own horn too loud, your neighbors might hear.",
 	    "You should do this professionally.",
-	    "Is it smokey in here? Because you're on fire!",
+	    "Is it smokey in here? Because you are on fire!",
 	    "Seriously. Great job.",
 	    "You didn't cheat on that question did you?  Because you got it right!",
 	    "Nice job.",
@@ -223,6 +223,8 @@ function renderAnswerPage(state, element) {
 
 function renderResultsPage(state, element) {
   renderResultsText(state, element.find('.final-score'));
+  var blackButton = document.getElementById('restart');
+  blackButton.classList.add('black-button');
 };
 
 function renderQuestionCount(state, element) {
@@ -250,8 +252,8 @@ function renderAnswers(state, element) {
 
 function renderAnswerPageHeader(state, element) {
   var html = state.lastAnswerCorrect ?
-      "<h1 class='correct-answer'>Correct!</h1>" :
-      "<h1 class='incorrect-answer'>WRONG!</>";
+      "<h2 class='correct-answer'>Correct!</h2>" :
+      "<h2 class='incorrect-answer'>WRONG!</>";
   element.html(html);
 };
 

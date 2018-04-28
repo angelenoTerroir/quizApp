@@ -3,6 +3,7 @@
 <head>
 	<title>Rubik's Quiz</title>
 	<link rel="stylesheet" type="text/css" href="normalizer.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono:700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 
   	<div class="question-page" style="display: none;">
       <div class="question-number"></div>
-      <h2 class="question-title"></h2>
+      <h3 class="question-title"></h3>
   		<form name="answers">
   			<ul class="answers-text"></ul>
   			<button type="submit" class="button">Submit</button>
@@ -40,7 +41,7 @@
   	<div class="score-page" style="display: none;">
   		<h2>Final Score</h2>
   		<p class="final-score"></p>
-  		<button class="restart">Start over</button>
+  		<button id="restart" class="restart">Start over</button>
   	</div>
 
   </main>
