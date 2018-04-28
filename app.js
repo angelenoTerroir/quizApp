@@ -9,7 +9,7 @@ var state = {
 	            '1962',
 	            '1989'
 	        ],
-	        correctAnswer: '1'
+	        correctAnswer: 1
 	    },
 	    {
 	        question: "What was the original name of the Rubik\'s Cube?",
@@ -19,7 +19,7 @@ var state = {
 	            'Rubik\'s Puzzle',
 	            'Magic Cube'
 	        ],
-	        correctAnswer: '3'
+	        correctAnswer: 3
 	    },
 	    {
 	        question: "What subject did the inventor of the Rubik\'s Cube teach?",
@@ -29,17 +29,17 @@ var state = {
 	            'Arcitechture',
 	            'Industrial Design'
 	        ],
-	        correctAnswer: '2'
+	        correctAnswer: 2
 	    },
 	    {
 	        question: "How long did it take Rubik to solve his own invention the first time?",
 	        answers: [
-	            'about Two minutes',
+	            'about two minutes',
 	            'more than one year',
 	            'less than one hour',
 	            'more than one month'
 	        ],
-	        correctAnswer: '3'
+	        correctAnswer: 3
 	    },
 	    {
 	        question: "How many Rubik\'s Cubes have been sold worldwide?",
@@ -49,7 +49,7 @@ var state = {
 	            '260,000',
 	            '28 million'
 	        ],
-	        correctAnswer: '0'
+	        correctAnswer: 0
 	    },
 	    {
 	        question: "What year were the first International Rubik\'s Championships?",
@@ -59,7 +59,7 @@ var state = {
 	            '1997',
 	            '2002'
 	        ],
-	        correctAnswer: '1'
+	        correctAnswer: 1
 	    },
 	    {
 	        question: "How many possible configurations does a Rubik\'s Cube have?",
@@ -69,7 +69,7 @@ var state = {
 	            '8,964,983,000',
 	            '390'
 	        ],
-	        correctAnswer: '0'
+	        correctAnswer: 0
 	    },
 	    {
 	        question: "What is the world record for the fastest Rubik\'s Cube solve time by a human?",
@@ -79,7 +79,7 @@ var state = {
 	            '4.59 seconds',
 	            '7.32 seconds'
 	        ],
-	        correctAnswer: '2'
+	        correctAnswer: 2
 	    },
 	        {
 	        question: "How many moves does it take to solve a Rubik\'s Cube?",
@@ -89,7 +89,7 @@ var state = {
 	            '45',
 	            'less than 20'
 	        ],
-	        correctAnswer: '3'
+	        correctAnswer: 3
 	    },
 	    {
 	        question: "What book about solving Rubik's Cubes sold 1.5 million copies?",
@@ -99,39 +99,39 @@ var state = {
 	            'You Can Do the Cube', 
 	            'The White Cross Method'
 	        ],
-	        correctAnswer: '2'
+	        correctAnswer: 2
 	    },
 	],
 	winner : [
-	    "You got it right! Are you a genius or something?",
-	    "You answered correctly! Give yourself a pat on the back.",
+	    "Are you a genius or something?",
+	    "Give yourself a pat on the back.",
 	    "Correct! That was super impressive.",
-	    "Nice! That was a lucky guess!",
-	    "Your answer is correct!  Don't toot your own horn too loud, your neighbors might hear.",
-	    "Solid answer. You should do this professionally.",
+	    "That was a lucky guess!",
+	    "Don't toot your own horn too loud, your neighbors might hear.",
+	    "You should do this professionally.",
 	    "Is it smokey in here? Because you're on fire!",
 	    "Seriously. Great job.",
-	    "You didn't cheat on that question did you?  Becaues oyu got it right!",
-	    "That's right. Nice job.",
+	    "You didn't cheat on that question did you?  Because you got it right!",
+	    "Nice job.",
 	    "Congratulations, you know a useless fact.",
 	    "I'm pretty sure you guessed on that one, but you got it correct, so...",
-	    "Amazing! 10 points to Gryffindor!",
+	    "10 points to Gryffindor!",
 	    "Outstanding answer. Way to go!",
 	    "Believe it or not, that's true!"
 
 	],
 	loser : [
-	    "You got it wrong.  What a shame.",
-	    "Wrong. Can't you do anything right?",
-	    "Incorrect. This is pretty disappointing.",
-	    "That's not right. That's wrong. Very wrong.",
+	    "What a shame.",
+	    "Can't you do anything right?",
+	    "This is pretty disappointing.",
+	    "That's wrong. Very wrong.",
 	    "Sorry. This question obviously had you stumped.",
 	    "I'd be lying if I told you your answer was correct. Sorry.",
 	    "Nope. Sorry.",
-	    "That's incorrect. Today is not your day.",
+	    "Today is not your day.",
 	    "Are you even trying?",
 	    "What kind of answer was that?",
-	    "That's not right. This is just embarassing.",
+	    "This is just embarassing.",
 	    "Not even close. What were you thinking?",
 	    "Better luck next time.",
 	    "Not a great choice.",
@@ -161,7 +161,7 @@ function resetGame(state) {
 
 function answerQuestion(state, answer) {
   var currentQuestion = state.quiz[state.currentQuestionIndex];
-  state.lastAnswerCorrect = currentQuestion.correctChoiceIndex === answer;
+  state.lastAnswerCorrect = currentQuestion.correctAnswer === answer;
   if (state.lastAnswerCorrect) {
     state.score++;
   }
@@ -202,7 +202,7 @@ function renderRubik(state, elements) {
     renderAnswerPage(state, elements[state.page]);
   }
   else if (state.page === 'score-page') {
-    renderFinalScorePage(state, elements[state.page]);
+    renderResultsPage(state, elements[state.page]);
   }
 };
 
@@ -267,7 +267,7 @@ function renderNextButtonText(state, element) {
   element.text(text);
 };
 
-function renderFinalScoreText(state, element) {
+function renderResultsText(state, element) {
   var text = "You got " + state.score + " out of " +
     state.quiz.length + " questions right.";
   element.text(text);
@@ -289,7 +289,7 @@ $("form[name='start-game']").submit(function(event) {
   renderRubik(state, appPages);
 });
 
-$(".restart-game").click(function(event){
+$(".restart").click(function(event){
   event.preventDefault();
   resetGame(state);
   renderRubik(state, appPages);
