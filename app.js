@@ -116,7 +116,7 @@ var state = {
 	    "Congratulations, you know a useless fact.",
 	    "I'm pretty sure you guessed on that one, but you got it correct, so...",
 	    "10 points to Gryffindor!",
-	    "Outstanding answer. Way to go!",
+	    "What an outstanding answer!",
 	    "Believe it or not, that's true!"
 
 	],
@@ -131,12 +131,12 @@ var state = {
 	    "Today is not your day.",
 	    "Are you even trying?",
 	    "What kind of answer was that?",
-	    "This is just embarassing.",
+	    "That was embarassing.",
 	    "Not even close. What were you thinking?",
 	    "Better luck next time.",
 	    "Not a great choice.",
 	    "Try harder next time.",
-	    'In the words of Dwight Schrute... "False."',
+	    'In the words of Dwight Schrute... "False!"',
 	    "That's not right."
 	],
 	score: 0,
